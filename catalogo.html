@@ -1,54 +1,31 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Three Candy - Catálogo</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Catálogo de Produtos</h1>
-  </header>
-
-  <main class="catalog">
-    <div class="produto" data-produto="Bala Halls">
-      <h2>Bala Halls</h2>
-      <div class="controle">
-        <button class="menos">-</button>
-        <span class="quantidade">0</span>
-        <button class="mais">+</button>
-      </div>
-      <button class="adicionar">Adicionar</button>
+<body class="catalog-page">
+  <div class="catalog-item">
+    <h3>Bala Halls</h3>
+    <div class="controle">
+      <button class="menos">-</button>
+      <span class="quantidade">0</span>
+      <button class="mais">+</button>
     </div>
+    <button class="adicionar">Adicionar</button>
+  </div>
 
-    <div class="produto" data-produto="Chiclete Trident">
-      <h2>Chiclete Trident</h2>
-      <div class="controle">
-        <button class="menos">-</button>
-        <span class="quantidade">0</span>
-        <button class="mais">+</button>
-      </div>
-      <button class="adicionar">Adicionar</button>
+  <div class="catalog-item">
+    <h3>Chiclete Trident</h3>
+    <div class="controle">
+      <button class="menos">-</button>
+      <span class="quantidade">0</span>
+      <button class="mais">+</button>
     </div>
+    <button class="adicionar">Adicionar</button>
+  </div>
 
-    <div class="produto" data-produto="Palha Italiana">
-      <h2>Palha Italiana</h2>
-      <div class="controle">
-        <button class="menos">-</button>
-        <span class="quantidade">0</span>
-        <button class="mais">+</button>
-      </div>
-      <button class="adicionar">Adicionar</button>
+  <div class="catalog-item">
+    <h3>Palha Italiana</h3>
+    <div class="controle">
+      <button class="menos">-</button>
+      <span class="quantidade">0</span>
+      <button class="mais">+</button>
     </div>
-  </main>
-
-  <section class="carrinho">
-    <h2>Seu Pedido</h2>
-    <ul id="itens-carrinho"></ul>
-    <p><strong>Total:</strong> R$ <span id="total">0,00</span></p>
-    <button id="finalizarPedido">Finalizar Pedido via WhatsApp</button>
-  </section>
-
-  <script src="script.js"></script>
+    <button class="adicionar">Adicionar</button>
+  </div>
 </body>
-</html>
