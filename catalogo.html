@@ -39,13 +39,15 @@
     <button class="adicionar">Adicionar</button>
   </div>
 
-  <h2>Carrinho</h2>
-  <ul id="carrinho-lista"></ul>
-  <div id="total">Total: R$ 0</div>
-  <button id="btn-pagar" disabled>Pagar</button>
+  <!-- Carrinho fixo -->
+  <div id="carrinho">
+    <h2>Carrinho</h2>
+    <ul id="carrinho-lista"></ul>
+    <div id="total">Total: R$ 0</div>
+    <button id="btn-pagar" disabled>Pagar</button>
+  </div>
 
   <script>
-    // Recupera usuário para mostrar confirmação (se quiser)
     const usuario = JSON.parse(localStorage.getItem('usuario')) || {};
 
     const catalogItems = document.querySelectorAll('.catalog-item');
@@ -77,6 +79,7 @@
 
         const produto = item.dataset.produto;
         const preco = parseFloat(item.dataset.preco);
+
         // Verifica se já tem no carrinho
         const carrinhoIndex = carrinho.findIndex(c => c.produto === produto);
         if (carrinhoIndex >= 0) {
@@ -106,7 +109,16 @@
     btnPagar.addEventListener('click', () => {
       if (carrinho.length === 0) return alert('Carrinho vazio!');
 
-      // Monta a mensagem para o WhatsApp
+      // Mostrar confirmação antes de enviar para WhatsApp
+      let resumoPedido = 'Seu pedido:\n';
+      carrinho.forEach(({ produto, quantidade }) => {
+        resumoPedido += `- ${produto}: ${quantidade} unidade(s)\n`;
+      });
+      resumoPedido += `Total: R$ ${totalDisplay.textContent.replace('Total: ', '')}\n\nDeseja confirmar o pedido?`;
+
+      if (!confirm(resumoPedido)) return;
+
+      // Monta mensagem para WhatsApp
       let mensagem = `Olá, tenho um pedido:\n`;
       carrinho.forEach(({ produto, quantidade }) => {
         mensagem += `- ${produto}: ${quantidade} unidade(s)\n`;
@@ -116,7 +128,7 @@
       mensagem += `Turma: ${usuario.turma || ''}\n`;
       mensagem += `Tipo de entrega: ${usuario.tipoEntrega || ''}`;
 
-      const telefone = '5541996597922'; // número sem espaços nem símbolos
+      const telefone = '5541996597922';
       const urlWhatsapp = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
       window.open(urlWhatsapp, '_blank');
     });
