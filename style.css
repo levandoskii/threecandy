@@ -1,74 +1,121 @@
-/* ------------------ LOGIN PAGE ------------------ */
-body.login-page {
-  background-color: #007bff; /* azul forte */
+/* ------------------ INÍCIO PAGE ------------------ */
+body.inicio-page {
+  background-color: #fff5f9;
   font-family: 'Segoe UI', sans-serif;
-  margin: 0;
+  color: #4b2e2e;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
   min-height: 100vh;
-  padding: 1rem;
+  margin: 0;
 }
 
-.login-container {
-  background-color: #ffc0cb; /* rosa claro */
-  border: 3px solid #000; /* borda preta */
-  border-radius: 16px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+.inicio-container {
+  max-width: 700px;
+  background-color: #ffffff;
   padding: 2rem;
-  max-width: 400px;
-  width: 100%;
-  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ff69b4;
 }
 
 .logo {
-  font-size: 2rem;
-  color: #000;
+  font-size: 2.8rem;
+  color: #ff1493;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.slogan {
+  font-size: 1.3rem;
+  color: #5c3c3c;
   margin-bottom: 1.5rem;
-  font-weight: bold;
 }
 
-#login-form input,
-#login-form select {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-
-#login-form button {
-  width: 100%;
-  padding: 14px;
-  background-color: #ff1493; /* rosa choque */
+.catalog-button {
+  background-color: #ff69b4;
   color: white;
-  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 0.9rem 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  border: none;
   border-radius: 12px;
-  cursor: pointer;
+  display: inline-block;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
+  margin-bottom: 1.5rem;
+}
+
+.catalog-button:hover {
+  background-color: #d63a97;
+  transform: scale(1.05);
+}
+
+.welcome-message {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  color: #5c3c3c;
+  line-height: 1.6;
+}
+
+.icons-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 1rem;
 }
 
-#login-form button:hover {
-  background-color: #d0107a;
-  transform: scale(1.05);
+.icon-box {
+  flex: 1;
+  min-width: 150px;
+  background-color: #ffe4ec;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-box i {
+  font-size: 2rem;
+  color: #ff1493;
+  margin-bottom: 0.5rem;
+}
+
+.icon-box p {
+  font-size: 0.95rem;
+  color: #4b2e2e;
 }
 
 /* Responsivo */
 @media (max-width: 480px) {
-  .login-container {
+  .inicio-container {
     padding: 1.5rem 1rem;
   }
 
   .logo {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
-  #login-form button {
+  .slogan {
+    font-size: 1.1rem;
+  }
+
+  .catalog-button {
     font-size: 1rem;
+  }
+
+  .welcome-message {
+    font-size: 1rem;
+  }
+
+  .icons-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icon-box {
+    width: 100%;
   }
 }
