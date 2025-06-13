@@ -17,24 +17,27 @@
 
   <div class="icons-section">
     <div class="icon-item">
-      <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+      <!-- Ícone de pessoa (exemplo simples com emoji) -->
+      <div style="font-size:60px;">👤</div>
       <div>Acesse seus pedidos com facilidade!</div>
     </div>
     <div class="icon-item">
-      <svg viewBox="0 0 24 24"><path d="M3 3h18v2H3zm2 4h14v14H5z"/></svg>
+      <!-- Ícone de símbolo de pedidos -->
+      <div style="font-size:60px;">🛒</div>
       <div>Faça seu pedido e saboreie doces incríveis!</div>
     </div>
     <div class="icon-item">
-      <svg viewBox="0 0 24 24"><path d="M12 2c-1.1 0-2 .9-2 2v1H6v12h12V5h-4V4c0-1.1-.9-2-2-2z"/></svg>
+      <!-- Ícone de cupcake -->
+      <div style="font-size:60px;">🧁</div>
       <div>Doces feitos com carinho e amor exclusivamente para você!</div>
     </div>
   </div>
 
   <script>
-    document.getElementById('btn-catalogo').addEventListener('click', () => {
+    const btnCatalogo = document.getElementById('btn-catalogo');
+    btnCatalogo.addEventListener('click', () => {
       window.location.href = 'catalogo.html';
     });
   </script>
 </body>
 </html>
-
