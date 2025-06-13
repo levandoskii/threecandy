@@ -1,29 +1,58 @@
+/* Importando fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: #fff9f8;
   color: #3a3a3a;
+  line-height: 1.6;
   padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1, h2 {
-  text-align: center;
   color: #d64550;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  text-align: center;
 }
 
-p {
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+p, span {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  margin-bottom: 1em;
   text-align: center;
-  font-size: 1rem;
+  max-width: 600px;
 }
 
 button {
   background-color: #d64550;
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 12px 20px;
+  border-radius: 8px;
   cursor: pointer;
-  margin: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  margin: 8px 0;
+  min-width: 150px;
 }
 
 button:hover {
@@ -31,108 +60,254 @@ button:hover {
 }
 
 header {
-  padding-bottom: 20px;
-}
-
-.main-header {
-  text-align: center;
-  padding-top: 20px;
-}
-
-.main-header .slogan {
-  font-size: 1.2rem;
-  margin: 10px 0;
+  padding-bottom: 30px;
+  max-width: 700px;
+  width: 100%;
 }
 
 .welcome-section {
+  max-width: 700px;
   padding: 20px;
-  font-size: 1rem;
-  max-width: 600px;
-  margin: auto;
-  text-align: center;
+  margin-bottom: 30px;
+  color: #6a4a4a;
 }
 
 .icons-section {
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  max-width: 700px;
+  width: 100%;
+  gap: 30px;
+  margin-bottom: 50px;
   flex-wrap: wrap;
-  gap: 10px;
 }
 
 .icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex: 1;
-  text-align: center;
-  min-width: 100px;
+  min-width: 140px;
+  max-width: 180px;
 }
 
 .icon-item img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  filter: invert(33%) sepia(47%) saturate(403%) hue-rotate(332deg) brightness(88%) contrast(90%);
 }
 
 .catalog {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  max-width: 600px;
-  margin: auto;
+  gap: 25px;
+  max-width: 700px;
+  width: 100%;
 }
 
 .produto {
   background: #ffeaea;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 25px 20px;
+  border-radius: 15px;
   text-align: center;
+  box-shadow: 0 2px 6px rgb(214 69 80 / 0.3);
+}
+
+.produto h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #b03b45;
 }
 
 .controle {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.controle button {
+  padding: 10px 15px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 1;
+  background-color: #d64550;
+  transition: background-color 0.3s ease;
+}
+
+.controle button:hover {
+  background-color: #b03b45;
+}
+
+.controle .quantidade {
+  font-size: 1.4rem;
+  min-width: 35px;
+  text-align: center;
+  font-weight: 600;
+  color: #6a2a3a;
+}
+
+.adicionar {
+  background-color: #d64550;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px 25px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgb(214 69 80 / 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.adicionar:hover {
+  background-color: #b03b45;
 }
 
 .carrinho {
-  max-width: 600px;
-  margin: 30px auto;
+  max-width: 700px;
+  margin: 40px auto 60px;
   background: #f6f6f6;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+}
+
+.carrinho h2 {
+  margin-bottom: 20px;
+  color: #b03b45;
 }
 
 ul#itens-carrinho {
   list-style: none;
   padding: 0;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #4a4a4a;
+  font-size: 1.15rem;
+}
+
+ul#itens-carrinho li {
+  margin-bottom: 8px;
+  border-bottom: 1px solid #d64550aa;
+  padding-bottom: 8px;
+}
+
+#total {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #3a3a3a;
 }
 
 .botao-whats {
   display: block;
   text-align: center;
   font-size: 1.2rem;
-  margin-top: 30px;
+  margin-top: 40px;
   background-color: #25d366;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 10px;
   color: white;
   text-decoration: none;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 3px 6px rgb(0 128 0 / 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.botao-whats:hover {
+  background-color: #1da851;
 }
 
 .login-container {
   max-width: 400px;
-  margin: auto;
+  margin: 120px auto 60px;
   padding: 40px;
   background: #fff0f0;
-  border-radius: 10px;
-  margin-top: 100px;
+  border-radius: 20px;
   text-align: center;
+  box-shadow: 0 6px 14px rgb(214 69 80 / 0.3);
 }
 
-.login-container input, .login-container select {
+.login-container input,
+.login-container select {
   display: block;
   width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-  font-size: 1rem;
+  margin: 15px 0;
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: 1px solid #d64550aa;
+  outline-color: #d64550;
+  font-weight: 600;
 }
+
+.login-container button {
+  margin-top: 30px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 15px 10px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .icons-section {
+    gap: 15px;
+  }
+
+  .icon-item {
+    min-width: 110px;
+    max-width: 140px;
+  }
+
+  .produto {
+    padding: 20px 15px;
+  }
+
+  .controle button {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .controle .quantidade {
+    font-size: 1.1rem;
+  }
+
+  .adicionar {
+    max-width: 100%;
+  }
+
+  .login-container {
+    margin: 80px 15px 50px;
+    padding: 30px 20px;
+  }
+
+  .login-container input,
+  .login-container select {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}
+
