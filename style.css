@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff9f8;
+  color: #3a3a3a;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #d64550;
+}
+
+p {
+  text-align: center;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #d64550;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #b03b45;
+}
+
+header {
+  padding-bottom: 20px;
+}
+
+.main-header {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.main-header .slogan {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.welcome-section {
+  padding: 20px;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.icons-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.icon-item {
+  flex: 1;
+  text-align: center;
+  min-width: 100px;
+}
+
+.icon-item img {
+  width: 40px;
+  height: 40px;
+}
+
+.catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.produto {
+  background: #ffeaea;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.controle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.carrinho {
+  max-width: 600px;
+  margin: 30px auto;
+  background: #f6f6f6;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+ul#itens-carrinho {
+  list-style: none;
+  padding: 0;
+}
+
+.botao-whats {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 30px;
+  background-color: #25d366;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 40px;
+  background: #fff0f0;
+  border-radius: 10px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.login-container input, .login-container select {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+}
