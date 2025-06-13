@@ -1,18 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Three Candy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body class="login-page">
   <div class="login-container">
-    <label for="nome">Nome e Sobrenome</label>
-    <input id="nome" type="text" placeholder="Digite seu nome completo" required />
+    <form id="loginForm">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required />
 
-    <label for="turma">Turma</label>
-    <input id="turma" type="text" placeholder="Digite sua turma" required />
+      <label for="sobrenome">Sobrenome</label>
+      <input type="text" id="sobrenome" name="sobrenome" required />
 
-    <label for="tipoEntrega">Tipo de Entrega</label>
-    <select id="tipoEntrega" required>
-      <option value="">Selecione</option>
-      <option value="entrega no dia">Entrega no dia</option>
-      <option value="encomenda">Encomenda</option>
-    </select>
+      <label for="turma">Turma</label>
+      <input type="text" id="turma" name="turma" required />
 
-    <button id="btnEntrar">Entrar</button>
+      <label for="tipoEntrega">Tipo de Entrega</label>
+      <select id="tipoEntrega" name="tipoEntrega" required>
+        <option value="">Selecione...</option>
+        <option value="entrega no dia">Entrega no dia</option>
+        <option value="encomenda">Encomenda</option>
+      </select>
+
+      <button type="submit">Entrar</button>
+    </form>
   </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = form.nome.value.trim();
+      const sobrenome = form.sobrenome.value.trim();
+      const turma = form.turma.value.trim();
+      const tipoEntrega = form.tipoEntrega.value;
+      if (!nome || !sobrenome || !turma || !tipoEntrega) return alert('Preencha todos os campos.');
+
+      // Salva os dados no localStorage para usar depois
+      localStorage.setItem('usuario', JSON.stringify({ nome, sobrenome, turma, tipoEntrega }));
+      // Redireciona para a página inicial (index.html)
+      window.location.href = 'index.html';
+    });
+  </script>
 </body>
+</html>
