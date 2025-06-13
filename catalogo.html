@@ -1,31 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Three Candy - Catálogo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body class="catalog-page">
-  <div class="catalog-item">
+  <h1>Catálogo</h1>
+
+  <div class="catalog-item" data-produto="Bala Halls" data-preco="2">
     <h3>Bala Halls</h3>
     <div class="controle">
-      <button class="menos">-</button>
-      <span class="quantidade">0</span>
-      <button class="mais">+</button>
+      <button class="btn-menos">-</button>
+      <div class="quantidade">0</div>
+      <button class="btn-mais">+</button>
     </div>
     <button class="adicionar">Adicionar</button>
   </div>
 
-  <div class="catalog-item">
+  <div class="catalog-item" data-produto="Chiclete Trident" data-preco="3">
     <h3>Chiclete Trident</h3>
     <div class="controle">
-      <button class="menos">-</button>
-      <span class="quantidade">0</span>
-      <button class="mais">+</button>
+      <button class="btn-menos">-</button>
+      <div class="quantidade">0</div>
+      <button class="btn-mais">+</button>
     </div>
     <button class="adicionar">Adicionar</button>
   </div>
 
-  <div class="catalog-item">
+  <div class="catalog-item" data-produto="Palha Italiana" data-preco="10">
     <h3>Palha Italiana</h3>
     <div class="controle">
-      <button class="menos">-</button>
-      <span class="quantidade">0</span>
-      <button class="mais">+</button>
+      <button class="btn-menos">-</button>
+      <div class="quantidade">0</div>
+      <button class="btn-mais">+</button>
     </div>
     <button class="adicionar">Adicionar</button>
   </div>
+
+  <h2>Carrinho</h2>
+  <ul id="carrinho-lista"></ul>
+  <div id="total">Total: R$ 0</div>
+  <button id="btn-pagar" disabled>Pagar</button>
+
+  <script>
+    // Recupera usuário para mostrar confirmação (se quiser)
+    const usuario = JSON.parse(localStorage.getItem('usuario')) || {};
+
+    const catalogItems = document.querySelectorAll('.catalog-item');
+    const carrinhoLista = document.getElementById('carrinho-lista');
+    const totalDisplay = document.getElementById('total');
+    const btnPagar = document.getElementById('btn-pagar');
+
+    let carrinho = [];
+
+    catalogItems.forEach(item => {
+      const btnMais = item.querySelector('.btn-mais');
+      const btnMenos = item.querySelector('.btn-menos');
+      const quantidadeDisplay = item.querySelector('.quantidade');
+      const btnAdicionar = item.querySelector('.adicionar');
+
+      btnMais.addEventListener('click', () => {
+        let q = parseInt(quantidadeDisplay.textContent);
+        quantidadeDisplay.textContent = q + 1;
+      });
+
+      btnMenos.addEventListener('click', () => {
+        let q = parseInt(quantidadeDisplay.textContent);
+        if (q > 0) quantidadeDisplay.textContent = q - 1;
+      });
+
+      btnAdicionar.addEventListener('click', () => {
+        let quantidade = parseInt(quantidadeDisplay.textContent);
+        if (quantidade <= 0) return alert('Selecione ao menos 1 unidade.');
+
+        const produto = item.dataset.produto;
+        const preco = parseFloat(item.dataset.preco);
+        // Verifica se já tem no carrinho
+        const carrinhoIndex = carrinho.findIndex(c => c.produto === produto);
+        if (carrinhoIndex >= 0) {
+          carrinho[carrinhoIndex].quantidade += quantidade;
+        } else {
+          carrinho.push({ produto, preco, quantidade });
+        }
+
+        quantidadeDisplay.textContent = '0';
+        atualizarCarrinho();
+      });
+    });
+
+    function atualizarCarrinho() {
+      carrinhoLista.innerHTML = '';
+      let total = 0;
+      carrinho.forEach(({ produto, preco, quantidade }) => {
+        const li = document.createElement('li');
+        li.textContent = `${produto} - ${quantidade} unidade(s) - R$ ${(preco * quantidade).toFixed(2)}`;
+        carrinhoLista.appendChild(li);
+        total += preco * quantidade;
+      });
+      totalDisplay.textContent = `Total: R$ ${total.toFixed(2)}`;
+      btnPagar.disabled = carrinho.length === 0;
+    }
+
+    btnPagar.addEventListener('click', () => {
+      if (carrinho.length === 0) return alert('Carrinho vazio!');
+
+      // Monta a mensagem para o WhatsApp
+      let mensagem = `Olá, tenho um pedido:\n`;
+      carrinho.forEach(({ produto, quantidade }) => {
+        mensagem += `- ${produto}: ${quantidade} unidade(s)\n`;
+      });
+      mensagem += `Total: R$ ${totalDisplay.textContent.replace('Total: ', '')}\n`;
+      mensagem += `Nome: ${usuario.nome || ''} ${usuario.sobrenome || ''}\n`;
+      mensagem += `Turma: ${usuario.turma || ''}\n`;
+      mensagem += `Tipo de entrega: ${usuario.tipoEntrega || ''}`;
+
+      const telefone = '5541996597922'; // número sem espaços nem símbolos
+      const urlWhatsapp = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+      window.open(urlWhatsapp, '_blank');
+    });
+  </script>
 </body>
+</html>
