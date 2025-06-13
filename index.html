@@ -1,50 +1,35 @@
-<script>
-  const usuario = localStorage.getItem('usuario');
-  if (!usuario) {
-    window.location.href = 'login.html';
-  }
-</script>
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Three Candy - Início</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body class="home-page">
-  <h1>Three Candy</h1>
-  <div class="tagline">Três vezes mais sabor, carinho e alegria</div>
-  <button id="btn-catalogo">Ver Catálogo</button>
+<body class="inicio-page">
+  <div class="inicio-container">
+    <h1 class="logo">Three Candy</h1>
+    <p class="slogan">Três vezes mais sabor, carinho e alegria</p>
+    <a href="catalogo.html" class="catalog-button">Ver Catálogo</a>
+    <p class="welcome-message">
+      Seja bem-vindo ao nosso cantinho que mais adoça vidas! Aqui, cada detalhe é feito com carinho: dos brigadeiros aos brownies artesanais, tudo é preparado para encantar você. Venha viver momentos especiais e adoçar o seu dia com a gente — será um prazer te receber!
+    </p>
 
-  <p class="welcome-text">
-    Seja bem-vindo ao nosso cantinho que mais adoça vidas! Aqui, cada detalhe é feito com carinho: dos brigadeiros aos brownies artesanais, tudo é preparado para encantar você. Venha viver momentos especiais e adoçar o seu dia com a gente — será um prazer te receber!
-  </p>
-
-  <div class="icons-section">
-    <div class="icon-item">
-      <!-- Ícone de pessoa (exemplo simples com emoji) -->
-      <div style="font-size:60px;">👤</div>
-      <div>Acesse seus pedidos com facilidade!</div>
-    </div>
-    <div class="icon-item">
-      <!-- Ícone de símbolo de pedidos -->
-      <div style="font-size:60px;">🛒</div>
-      <div>Faça seu pedido e saboreie doces incríveis!</div>
-    </div>
-    <div class="icon-item">
-      <!-- Ícone de cupcake -->
-      <div style="font-size:60px;">🧁</div>
-      <div>Doces feitos com carinho e amor exclusivamente para você!</div>
+    <div class="icons-section">
+      <div class="icon-box">
+        <i class="fas fa-user"></i>
+        <p>Acesse seus pedidos com facilidade!</p>
+      </div>
+      <div class="icon-box">
+        <i class="fas fa-receipt"></i>
+        <p>Faça seu pedido e saboreie doces incrivéis!</p>
+      </div>
+      <div class="icon-box">
+        <i class="fas fa-cookie"></i>
+        <p>Faça seu pedido e saboreie doces incrivéis!</p>
+      </div>
     </div>
   </div>
-
-  <script>
-    const btnCatalogo = document.getElementById('btn-catalogo');
-    btnCatalogo.addEventListener('click', () => {
-      window.location.href = 'catalogo.html';
-    });
-  </script>
 </body>
 </html>
