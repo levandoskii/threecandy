@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Three Candy - Login</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Three Candy - Início</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="login-page">
-  <div class="login-container">
-    <h1>Three Candy 🍬</h1>
-    <p>Preencha os dados para continuar:</p>
-    <form id="loginForm">
-      <input type="text" placeholder="Nome" id="nome" required>
-      <input type="text" placeholder="Sobrenome" id="sobrenome" required>
-      <input type="text" placeholder="Turma" id="turma" required>
-      <select id="tipoEntrega" required>
-        <option value="">Tipo de entrega</option>
-        <option value="Entrega no dia">Entrega no dia</option>
-        <option value="Encomenda">Encomenda</option>
-      </select>
-      <button type="submit">Entrar</button>
-    </form>
+<body class="home-page">
+  <h1>Three Candy</h1>
+  <div class="tagline">Três vezes mais sabor, carinho e alegria</div>
+  <button id="btn-catalogo">Ver Catálogo</button>
+
+  <p class="welcome-text">
+    Seja bem-vindo ao nosso cantinho que mais adoça vidas! Aqui, cada detalhe é feito com carinho: dos brigadeiros aos brownies artesanais, tudo é preparado para encantar você. Venha viver momentos especiais e adoçar o seu dia com a gente — será um prazer te receber!
+  </p>
+
+  <div class="icons-section">
+    <div class="icon-item">
+      <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+      <div>Acesse seus pedidos com facilidade!</div>
+    </div>
+    <div class="icon-item">
+      <svg viewBox="0 0 24 24"><path d="M3 3h18v2H3zm2 4h14v14H5z"/></svg>
+      <div>Faça seu pedido e saboreie doces incríveis!</div>
+    </div>
+    <div class="icon-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2c-1.1 0-2 .9-2 2v1H6v12h12V5h-4V4c0-1.1-.9-2-2-2z"/></svg>
+      <div>Doces feitos com carinho e amor exclusivamente para você!</div>
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('btn-catalogo').addEventListener('click', () => {
+      window.location.href = 'catalogo.html';
+    });
+  </script>
 </body>
 </html>
+
