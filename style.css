@@ -1,3 +1,72 @@
+body.login-page {
+  background-color: #b22222; /* Vermelho escuro para destaque */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: white;
+}
+
+.login-container {
+  background: #ffb800;
+  border-radius: 40px;
+  padding: 40px 35px;
+  box-shadow: 0 10px 24px rgba(255, 184, 0, 0.6);
+  border: 2px solid #3a1f00; /* borda fina escura para destaque */
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+body.home-page {
+  background-color: #fffae6; /* Fundo bege claro para harmonia */
+  color: #b22f00; /* Texto vermelho escuro para contraste */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.home-page h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center; /* centraliza "Três vezes mais sabor..." */
+  color: #b22f00;
+}
+
+.home-page .tagline {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #b22f00;
+  text-align: center;
+}
+
+.home-page button#btn-catalogo {
+  display: block;
+  margin: 0 auto 40px; /* centraliza o botão */
+  background-color: #ffc300;
+  color: #b22f00;
+  padding: 18px 40px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 10px rgba(255, 195, 0, 0.7);
+  transition: background-color 0.3s ease;
+}
+
+.home-page button#btn-catalogo:hover {
+  background-color: #e6b800;
+}
 .carrinho, .catalog {
   background-color: #fffae6; /* fundo bege claro para destaque, tirar branco */
   border-radius: 20px;
