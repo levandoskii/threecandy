@@ -39,7 +39,6 @@
     <button class="adicionar">Adicionar</button>
   </div>
 
-  <!-- Carrinho fixo -->
   <div id="carrinho">
     <h2>Carrinho</h2>
     <ul id="carrinho-lista"></ul>
@@ -80,7 +79,6 @@
         const produto = item.dataset.produto;
         const preco = parseFloat(item.dataset.preco);
 
-        // Verifica se já tem no carrinho
         const carrinhoIndex = carrinho.findIndex(c => c.produto === produto);
         if (carrinhoIndex >= 0) {
           carrinho[carrinhoIndex].quantidade += quantidade;
@@ -109,7 +107,6 @@
     btnPagar.addEventListener('click', () => {
       if (carrinho.length === 0) return alert('Carrinho vazio!');
 
-      // Mostrar confirmação antes de enviar para WhatsApp
       let resumoPedido = 'Seu pedido:\n';
       carrinho.forEach(({ produto, quantidade }) => {
         resumoPedido += `- ${produto}: ${quantidade} unidade(s)\n`;
@@ -118,7 +115,6 @@
 
       if (!confirm(resumoPedido)) return;
 
-      // Monta mensagem para WhatsApp
       let mensagem = `Olá, tenho um pedido:\n`;
       carrinho.forEach(({ produto, quantidade }) => {
         mensagem += `- ${produto}: ${quantidade} unidade(s)\n`;
